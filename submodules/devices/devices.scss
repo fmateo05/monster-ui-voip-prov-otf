@@ -452,11 +452,11 @@
 			}
 		}
 
-		&[data-section="featureKeys"] input[type="text"] {
+		&[data-section="comboKeys"] input[type="text"] {
 			width: 190px;
 		}
 
-		&[data-section="linesKeys"]{
+		&[data-section="lines"]{
 			.control-group {
 				padding: 1rem;
 				box-shadow: inset 0px 1px 0px 0px #DBDBDE,

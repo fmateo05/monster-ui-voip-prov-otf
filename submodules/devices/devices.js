@@ -355,11 +355,13 @@ define(function(require) {
 				deviceForm.find('.tabs-section[data-section="basic"]').append(assignTemplate);
 			}
 
-			if (data.extra.hasOwnProperty('provision') &&  data.extra.provision.hasOwnProperty('keys'))  {
+			if (data.extra.hasOwnProperty('provision')  &&  data.extra.provision.hasOwnProperty('keys'))  {
 				_.each(data.extra.provision.keys, function(value) {
+                                     
 					var section = '.tabs-section[data-section="' + value.type + '"] ';
-
+                                                console.log(section);
 					_.each(value.data, function(val, key) {
+                                            
 						if (val) {
 							var groupSelector = '.control-group[data-id="' + key + '"] ',
 								valueSelector = '.feature-key-value[data-type~="' + val.type + '"]';
@@ -368,11 +370,11 @@ define(function(require) {
 								.find(section.concat(groupSelector, valueSelector))
 								.addClass('active');
 							templateDevice.find(valueSelector  + ' [name="provision.keys.'  +  value.id + '[' + key + '].value.line"]')
-								.val(_.get(val, 'value.line'));
+								.val(_.get(val, 'key.line'));
                                                         templateDevice.find(valueSelector + ' [name="provision.keys.' + value.id + '[' + key + '].value.label"]')
-								.val(_.get(val, 'value.label'));
+								.val(_.get(val, 'key.label'));
 							templateDevice.find(valueSelector + ' [name="provision.keys.' + value.id + '[' + key + '].value.value"]')
-								.val(_.get(val, 'value.value'));
+								.val(_.get(val, 'key.value'));
 						}
 					});
 				});
@@ -723,7 +725,7 @@ define(function(require) {
 				$featureKeyValue.siblings('.feature-key-value[data-type~="' + type + '"]').addClass('active');
 			});
 
-			templateDevice.find('.tabs-section[data-section="featureKeys"] .type-info a').on('click', function() {
+			templateDevice.find('.tabs-section[data-section="comboKeys"] .type-info a').on('click', function() {
 				var $this = $(this);
 
 				setTimeout(function() {
@@ -870,7 +872,7 @@ define(function(require) {
 
                                            originalData.provision.settings = originalData.provision.settings || {};
                                            originalData.provision.settings[key] = keys ;
-                                            console.log(keys);
+                                            
 					}
 				});
 
@@ -1133,27 +1135,7 @@ define(function(require) {
                                                                                         "27",
                                                                                         "28",
                                                                                         "29",
-                                                                                        "30",
-                                                                                        "31",
-                                                                                        "32",
-                                                                                        "33",
-                                                                                        "34",
-                                                                                        "35",
-                                                                                        "36",
-                                                                                        "37",
-                                                                                        "38",
-                                                                                        "39",
-                                                                                        "40",
-                                                                                        "41",
-                                                                                        "42",
-                                                                                        "43",
-                                                                                        "44",
-                                                                                        "45",
-                                                                                        "46",
-                                                                                        "47",
-                                                                                        "48",
-                                                                                        "49",
-                                                                                        "50"
+                                                                                        "30"
 										])
 										.concat(
 											type === 'lines' ? ['line'] : []
@@ -1180,9 +1162,9 @@ define(function(require) {
 										})
 										// Sort alphabetically while keeping `none` as first item
 										.sort(function(a, b) {
-//											return a.id === 'none' ? -1
-//												: b.id === 'none' ? 1
-//												: a.label.localeCompare(b.label, monster.config.whitelabel.language);
+											return a.id === 'none' ? -1
+												: b.id === 'none' ? 1
+												: a.label.localeCompare(b.label, monster.config.whitelabel.language);
 										})
 										.value(),
 									data: _.map(entries, function(metadata, idx) {
@@ -1313,7 +1295,7 @@ define(function(require) {
 												label: _.get(i18n, ['types', action])
 											},
 											type === 'lines' && hasDefaultLineKeys && !_.includes(allowedDefaultLineKeyActions, action) ? {
-												isActionRestringed: false
+												isActionRestringed: true
 											}
 											: {}
 											);

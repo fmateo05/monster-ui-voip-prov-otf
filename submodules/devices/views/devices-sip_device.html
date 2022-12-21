@@ -361,7 +361,7 @@
 						<div class="controls">
 							<div class="feature-key-value active">
 							{{#compare ../id '===' 'lines'}}
-								<label for="provision.keys.{{../id}}[{{@index}}].type">{{ @root.i18n.devices.popupSettings.keys.labels.function }}</label>
+								<label for="provision..keys.{{../id}}[{{@index}}].type">{{ @root.i18n.devices.popupSettings.keys.labels.function }}</label>
 							{{/compare}}
 								<select name="provision.keys.{{../id}}[{{@index}}].type" class="feature-key-type span2">
 								{{#select type}}
@@ -381,7 +381,7 @@
 								{{/select}}
 								</select>
 							</div>
-<!--							<div class="feature-key-value" data-type="presence">
+							<div class="feature-key-value" data-type="presence">
 								<label for="provision.keys.{{../id}}[{{@index}}].value.value">{{ @root.i18n.devices.popupSettings.keys.labels.user }}</label>
 								<select name="provision.keys.{{../id}}[{{@index}}].value.value" class="chosen-feature-key-user">
 								{{#each @root.extra.users}}
@@ -408,43 +408,21 @@
 									</option>
 								{{/each}}
 								</select>
-							</div>-->
-							<div class="feature-key-value" data-type="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50">
-                                                            <div>
-                                                                <label for="provision.keys.{{../id}}[{{@index}}].value.line">{{ @root.i18n.devices.popupSettings.keys.labels.line }}</label>
-                                                                <input type="text" value="" name="provision.keys.{{../id}}[{{@index}}].key.line">
-                                                            </div>   
-                                                            <div>
-                                                                <label for="provision.keys.{{../id}}[{{@index}}].value.label">{{ @root.i18n.devices.popupSettings.keys.labels.deviceLabel }}</label>
-								<input type="text" value="" name="provision.keys.{{../id}}[{{@index}}].key.label">
-                                                            </div>
-                                                            <div>
-                                                                <label for="provision.keys.{{../id}}[{{@index}}].value.value">{{ @root.i18n.devices.popupSettings.keys.labels.value }}</label>
-								<input type="text" value="" name="provision.keys.{{../id}}[{{@index}}].key.value">
-                                                             </div>   
 							</div>
-<!--                                                        <div class="feature-key-value" data-type="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50">
-								<label for="provision.keys.{{../id}}[{{@index}}].value.line">{{ @root.i18n.devices.popupSettings.keys.labels.line }}</label>
+							<div class="feature-key-value" data-type="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30">
+								<label for="provision.keys.{{../id}}[{{@index}}].key.value">{{ @root.i18n.devices.popupSettings.keys.labels.value }}</label>
+								<input type="text" value="" name="provision.keys.{{../id}}[{{@index}}].key.value">
+							</div>
+                                                        <div class="feature-key-value" data-type="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30">
+								<label for="provision.keys.{{../id}}[{{@index}}].key.line">{{ @root.i18n.devices.popupSettings.keys.labels.line }}</label>
 								<input type="text" value="" name="provision.keys.{{../id}}[{{@index}}].key.line">
-							</div>-->
+							</div>
 						{{#compare ../id '===' 'lines'}}
 							
-                                                        <div class="feature-key-value" data-type="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50">
-								<label for="provision.keys.{{../id}}[{{@index}}].value.line">{{ @root.i18n.devices.popupSettings.keys.labels.line }}</label>
-								<input type="text" value="" name="provision.keys.{{../id}}[{{@index}}].key.line">
-                                                                <label for="provision.keys.{{../id}}[{{@index}}].value.label">{{ @root.i18n.devices.popupSettings.keys.labels.deviceLabel }}</label>
-								<input type="text" value="" name="provision.keys.{{../id}}[{{@index}}].key.label">
-                                                                <label for="provision.keys.{{../id}}[{{@index}}].value.value">{{ @root.i18n.devices.popupSettings.keys.labels.value }}</label>
-								<input type="text" value="" name="provision.keys.{{../id}}[{{@index}}].key.value">
-							</div>
-<!--                                                         <div class="feature-key-value" data-type="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50">
-								<label for="provision.keys.{{../id}}[{{@index}}].value.label">{{ @root.i18n.devices.popupSettings.keys.labels.deviceLabel }}</label>
+                                                        <div class="feature-key-value" data-type="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30">
+								<label for="provision.keys.{{../id}}[{{@index}}].key.label">{{ @root.i18n.devices.popupSettings.keys.labels.deviceLabel }}</label>
 								<input type="text" value="" name="provision.keys.{{../id}}[{{@index}}].key.label">
 							</div>
-                                                         <div class="feature-key-value" data-type="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50">
-								<label for="provision.keys.{{../id}}[{{@index}}].value.value">{{ @root.i18n.devices.popupSettings.keys.labels.value }}</label>
-								<input type="text" value="" name="provision.keys.{{../id}}[{{@index}}].key.value">
-							</div>-->
 						{{/compare}}
 						</div>
 					</div>
